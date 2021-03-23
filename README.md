@@ -1,7 +1,5 @@
 # HW8
-## A homework assignment we work on together!
-### A). 
-
+#### A homework assignment we work on together!
 ## What problem does the Observer pattern help solve?
 ### A). 
 
@@ -12,9 +10,6 @@
 ### A). 
 
 ## Did the UML diagrams make the coding more straightforward?
-### A). 
-
-## Include a sample run in your report.
 ### A). 
 
 ## Link to GitHub Repository & Accounts.
