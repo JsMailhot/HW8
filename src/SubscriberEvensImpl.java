@@ -23,6 +23,7 @@ public class SubscriberEvensImpl implements Subscriber {
 				System.out.println("SubscriberEvens: Event is even: " + e.getEventDataValue());
 			}
 			if (eventsReceived == threshold) {
+				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
 			

@@ -1,13 +1,13 @@
 import java.util.ArrayList;
 
 public class PublisherImpl implements PublisherInterface {
-	private ArrayList<Subscriber> myList = new ArrayList<Subscriber>();
-	 public PublisherImpl() {
+	public ArrayList<Subscriber> myList = new ArrayList<Subscriber>();
+	public PublisherImpl() {
 
-	  }
-	 public ArrayList<Subscriber> getSubscriberList() {
-		 return myList;
-	 }
+	}
+	public ArrayList<Subscriber> getSubscriberList() {
+		return myList;
+	}
 
 	@Override
 	public void notifySubscribers(Event e) {

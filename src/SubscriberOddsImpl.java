@@ -14,6 +14,7 @@ public class SubscriberOddsImpl implements Subscriber {
 				System.out.println("SubscriberOdds: Event is odd: " + e.getEventDataValue());
 			}
 			if (eventsReceived == threshold) {
+				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
 			

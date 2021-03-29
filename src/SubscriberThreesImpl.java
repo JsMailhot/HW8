@@ -19,6 +19,7 @@ public class SubscriberThreesImpl implements Subscriber {
 				System.out.println("SubscriberThrees: Event is divisible by 3: " + e.getEventDataValue());
 			}
 			if (eventsReceived == threshold) {
+				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
 			
