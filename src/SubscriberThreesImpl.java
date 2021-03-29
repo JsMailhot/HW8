@@ -12,18 +12,19 @@ public class SubscriberThreesImpl implements Subscriber {
 			//	When the count is equal to the threshold do the following
 				//	Unregister the SubscriberThreesImpl object from the PublisherImpl object
 	@Override
-	public void notfiySubscriber(Event e) {
+	public boolean notfiySubscriber(Event e) {
 		if (e.getEventDataValue() % 3 == 0) {
 			eventsReceived++;
 			if (eventsReceived <= threshold) {
 				System.out.println("SubscriberThrees: Event is divisible by 3: " + e.getEventDataValue());
+				return true;
 			}
-			if (eventsReceived == threshold) {
+			else {
 				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
-			
 		}
+		return false;
 	}
 
 }

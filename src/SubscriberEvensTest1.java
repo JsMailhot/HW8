@@ -1,8 +1,4 @@
 import static org.junit.Assert.assertEquals;
-import static org.junit.jupiter.api.Assertions.*;
-
-import java.util.concurrent.ThreadLocalRandom;
-
 import org.junit.jupiter.api.Test;
 
 class SubscriberEvensTest1 {
@@ -13,9 +9,8 @@ class SubscriberEvensTest1 {
 		Boolean actual = true;
 		SubscriberEvensImpl subscirberEven = new SubscriberEvensImpl(publisher);
 		for (int i = 0; i < 22; i++) {
-			int int_random = ThreadLocalRandom.current().nextInt();
-			Event Event = new Event(int_random, i);
-		actual = subscirberEven.notfiySubscriber(Event);
+			Event Event = new Event(2, 0);
+			actual = subscirberEven.notfiySubscriber(Event);
 	}
 		assertEquals(false, actual);
 	}
