@@ -7,18 +7,16 @@ import java.util.concurrent.ThreadLocalRandom;
 
 import org.junit.jupiter.api.Test;
 
-class SubscriberEvensTest1 {
+class PublisherImplTest3 {
 
 	@Test
 	void test() {
 		PublisherImpl publisher = new PublisherImpl();
-		Boolean actual = true;
+		Boolean actual = false;
 		SubscriberEvensImpl subscirberEven = new SubscriberEvensImpl(publisher);
-		for (int i = 0; i < 22; i++) {
-			int int_random = ThreadLocalRandom.current().nextInt();
-			Event Event = new Event(int_random, i);
+			Event Event = new Event(2, 0);
 			actual = subscirberEven.notfiySubscriber(Event);
+		assertEquals(true, actual);
 	}
-		assertEquals(false, actual);
-	}
+
 }

@@ -12,12 +12,12 @@ public class PublisherImpl implements PublisherInterface {
 	}
 
 	@Override
-	public boolean notifySubscribers(Event e) {
+	public void notifySubscribers(Event e) {
+		boolean result = false;
 		for (int i = 0; i < myList.size(); i++) {
 //			System.out.println("Notifying subscriber " + myList.get(i));
-			return myList.get(i).notfiySubscriber(e);
+			result = myList.get(i).notfiySubscriber(e);
 		}
-		
 	}
 
 	@Override
