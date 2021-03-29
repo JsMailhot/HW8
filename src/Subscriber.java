@@ -1,3 +1,4 @@
 public interface Subscriber {
-	public void notifySubscriber();
+	public void notfiySubscriber(Event e);
+
 }
