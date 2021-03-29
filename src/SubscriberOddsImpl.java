@@ -7,18 +7,19 @@ public class SubscriberOddsImpl implements Subscriber {
 		publisherImpl = publisher;
 	}
 	@Override
-	public void notfiySubscriber(Event e) {
+	public boolean notfiySubscriber(Event e) {
 		if (e.getEventDataValue() % 2 == 1) {
 			eventsReceived++;
 			if (eventsReceived <= threshold) {
 				System.out.println("SubscriberOdds: Event is odd: " + e.getEventDataValue());
+				return true;
 			}
-			if (eventsReceived == threshold) {
+			else {
 				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
-			
 		}
+		return false;
 	}
 }
 	

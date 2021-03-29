@@ -16,18 +16,19 @@ public class SubscriberEvensImpl implements Subscriber {
 	}
 
 	@Override
-	public void notfiySubscriber(Event e) {
+	public boolean notfiySubscriber(Event e) {
 		if (e.getEventDataValue() % 2 == 0) {
 			eventsReceived++;
 			if (eventsReceived <= threshold) {
 				System.out.println("SubscriberEvens: Event is even: " + e.getEventDataValue());
+				return true;
 			}
-			if (eventsReceived == threshold) {
+			else {
 				eventsReceived = 0;
 				publisherImpl.unregisterSubscriber(this);
 			}
-			
 		}
+		return false;
 	}
 
 }

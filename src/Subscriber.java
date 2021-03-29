@@ -1,4 +1,4 @@
 public interface Subscriber {
-	public void notfiySubscriber(Event e);
+	public boolean notfiySubscriber(Event e);
 
 }
