@@ -17,11 +17,12 @@ public class EventGenerator {
 				//for (Subscriber s : myList) {
 					//s.notfiySubscriber(event); }
 				publisherImpl.notifySubscribers(event);
-				ArrayList<Subscriber> myTemp = (ArrayList<Subscriber>) listSubscriber.clone();
-				for (Subscriber s : myTemp) {
+				ArrayList<Subscriber> tempList = (ArrayList<Subscriber>) listSubscriber.clone();
+				for (Subscriber s : tempList) {
 					if (i % 40 == 0) {
-						publisherImpl.unregisterSubscriber(listSubscriber.get(myTemp.indexOf(s)));
-						publisherImpl.registerSubscriber(listSubscriber.get(myTemp.indexOf(s)));
+						Subscriber tempSub = listSubscriber.get(tempList.indexOf(s));
+						publisherImpl.unregisterSubscriber(tempSub);
+						publisherImpl.registerSubscriber(tempSub);
 					}
 				}
 			}
