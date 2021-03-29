@@ -20,7 +20,6 @@ public class EventGenerator {
 				ArrayList<Subscriber> tempList = (ArrayList<Subscriber>) listSubscriber.clone();
 				for (Subscriber s : tempList) {
 					if (i % 40 == 0) {
-//						Subscriber tempSub = listSubscriber.get(tempList.indexOf(s));
 						publisherImpl.unregisterSubscriber(listSubscriber.get(tempList.indexOf(s)));
 						publisherImpl.registerSubscriber(listSubscriber.get(tempList.indexOf(s)));
 					}
