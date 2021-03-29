@@ -10,6 +10,7 @@ public class EventGenerator {
 		}
 		public void runSimulation() {
 			ArrayList<Subscriber> listSubscriber = (ArrayList<Subscriber>) publisherImpl.getSubscriberList().clone();
+			ArrayList<Subscriber> tempList = (ArrayList<Subscriber>) listSubscriber.clone();
 			int i;
 			for (i = 0; i < 200; i++) {
 				Event event = generateEvent(i);
@@ -17,9 +18,8 @@ public class EventGenerator {
 				//for (Subscriber s : myList) {
 					//s.notfiySubscriber(event); }
 				publisherImpl.notifySubscribers(event);
-				ArrayList<Subscriber> tempList = (ArrayList<Subscriber>) listSubscriber.clone();
 				for (Subscriber s : tempList) {
-					if (i % 40 == 0) {
+					if (i % 40 == 0 && i != 0) {
 						publisherImpl.unregisterSubscriber(listSubscriber.get(tempList.indexOf(s)));
 						publisherImpl.registerSubscriber(listSubscriber.get(tempList.indexOf(s)));
 					}

@@ -11,7 +11,8 @@ public class PublisherImpl implements PublisherInterface {
 
 	@Override
 	public void notifySubscribers(Event e) {
-		for (int i = 0; i < myList.size() - 1; i++) {
+		for (int i = 0; i < myList.size(); i++) {
+//			System.out.println("Notifying subscriber " + myList.get(i));
 			myList.get(i).notfiySubscriber(e);
 		}
 		
@@ -19,13 +20,14 @@ public class PublisherImpl implements PublisherInterface {
 
 	@Override
 	public void registerSubscriber(Subscriber s) {
+		System.out.println("Registering " + s);
 		myList.add(s);
-		
 	}
 
 	@Override
 	public void unregisterSubscriber(Subscriber s) {
 		myList.remove(s);
+		System.out.println("Unregistering " + s);
 	}
 
 }
