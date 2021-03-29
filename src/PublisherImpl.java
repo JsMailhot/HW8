@@ -13,7 +13,7 @@ public class PublisherImpl implements PublisherInterface {
 	public void notifySubscribers(Event e) {
 		ArrayList<Subscriber> myTemp = (ArrayList<Subscriber>) myList.clone();
 		for (Subscriber subscriber : myTemp) {
-			myList.get(myTemp.lastIndexOf(subscriber)).notfiySubscriber(e);
+			myList.get(myTemp.indexOf(subscriber)).notfiySubscriber(e);
 		}
 		
 	}
